@@ -5,18 +5,17 @@
   <title>Email Verified</title>
 </head>
 <body>
-  <h1 id="msg">Verifying...</h1>
+  <h1 id="msg">Checking verification...</h1>
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const type = params.get("type");
 
-    if (type === "signup") {
+    if (params.has("token") || params.has("access_token")) {
       document.getElementById("msg").innerText =
         "✅ Your email has been verified successfully!";
     } else {
       document.getElementById("msg").innerText =
-        "✅ Your email has been verified successfully!";
+        "❌ Invalid or expired verification link.";
     }
   </script>
 </body>
