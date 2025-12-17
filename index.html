@@ -5,18 +5,7 @@
   <title>Email Verified</title>
 </head>
 <body>
-  <h1 id="msg">Checking verification...</h1>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-
-    if (params.has("token") || params.has("access_token")) {
-      document.getElementById("msg").innerText =
-        "✅ Your email has been verified successfully!";
-    } else {
-      document.getElementById("msg").innerText =
-        "❌ Invalid or expired verification link.";
-    }
-  </script>
+  <h1>✅ Your email is verified successfully</h1>
+  <p>You can now close this page and return to the app.</p>
 </body>
 </html>
