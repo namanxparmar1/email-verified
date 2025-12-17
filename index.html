@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Email Verified</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="text-align:center;font-family:Arial;padding-top:60px;">
-  <h2>✅ Your Email is Verified</h2>
-  <p>You can now return to the app and log in.</p>
+<body>
+  <h1 id="msg">Verifying...</h1>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get("type");
+
+    if (type === "signup") {
+      document.getElementById("msg").innerText =
+        "✅ Your email has been verified successfully!";
+    } else {
+      document.getElementById("msg").innerText =
+        "❌ Invalid or expired verification link.";
+    }
+  </script>
 </body>
 </html>
